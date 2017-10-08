@@ -16,14 +16,14 @@ View::~View(){
 void View::showelem(){
 	string str;
 	if (tmp->getTypeCurrent()) {
-		str = "Переменный";
+		str = "A.C.";
 	}
 	else {
-		str = "Постоянный";
+		str = "D.C.";
 	}
-	cout << "Тип тока:" << str << endl;
-	cout << "Сила тока:" << tmp->amperage << endl;
-	cout << "Напряжение:" << tmp->voltage << endl;
+	cout << "Type of electric current:" << str << endl;
+	cout << "Current strength:" << tmp->amperage << endl;
+	cout << "Voltage:" << tmp->voltage << endl;
 }
 
 void View2::SetDataSource(const Data * aData){
@@ -31,9 +31,9 @@ void View2::SetDataSource(const Data * aData){
 }
 
 void View2::PrintData(const Data &aData){
-	cout << "--------------" << endl;
-	cout << "|Type| V | A |" << endl;
-	cout << "--------------" << endl;
+	wcout << wchar_t(218) << "------------" << wchar_t(191) << endl;
+	wcout << wchar_t(179) <<"Type| V | A " << wchar_t(179) << endl;
+	wcout << wchar_t(195) << "------------" << wchar_t(180) << endl;
 	string tmp = "";
 	if (aData.getTypeCurrent()) {
 		 tmp = "A.C.";
@@ -42,7 +42,7 @@ void View2::PrintData(const Data &aData){
 		 tmp = "D.C.";
 	}
 	cout << "|" << tmp << "|" << aData.voltage << " |" << aData.amperage << " |" <<  endl;
-	cout << "--------------" << endl;
+	wcout <<wchar_t(192) << "------------" <<wchar_t(217) << endl;
 }
 
 

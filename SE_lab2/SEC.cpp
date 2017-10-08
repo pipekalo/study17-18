@@ -7,8 +7,7 @@
 
 
 int main(){
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
+	setlocale(LC_ALL, "UTF-8");
 
 	Data *kek = new Data(true,12.0,11);
 	View ses = View(kek);
